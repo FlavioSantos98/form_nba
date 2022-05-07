@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<script>
+    function ver(){
+        //Verificar os dados
+        var name = document.getElementById('nome').value.length;
+        var age = document.getElementById('age').value.length;
+        var team = document.getElementById('drop').value.length;
+
+        if(required(name) === true && required(age) === true && required(team) === true) {
+            buttonOpen();    
+        } else {
+            alert("Insira os dados obrigatórios (*), por favor!");
+        }
+    }  
+
+    function required(input){
+        var i = input;
+        if(i === 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function buttonOpen() {
+        //Função para abrir a janela popup
+        document.getElementById('pop').style.opacity = "1";
+        document.getElementById('pop').style.pointerEvents = "auto";
+    }
+
+    function buttonClose() {
+        //Função para fechar a janela popup
+        document.getElementById('pop').style.opacity = "0";
+        document.getElementById('pop').style.pointerEvents = "none";
+        window.location.reload();
+    }
+
+    //Mudar a imagem de fundo
+    function changeBgImg(img) {
+        if(img == "atl") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(204, 9, 47, 0.8), rgba(255, 255, 255, 0.5)), url('imgs/atl.jpg')";
+            document.body.style.backgroundColor = "rgba(204, 9, 47, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(204, 9, 47, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(204, 9, 47, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(204, 9, 47, 0.8), rgba(255, 255, 255, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(204, 9, 47, 0.9), rgba(255, 255, 255, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(204, 9, 47, 0.9), rgba(255, 255, 255, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(204, 9, 47, 0.9), rgba(255, 255, 255, 0.9)";
+        } if (img == "bos") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 136, 83, 0.8), rgba(42, 50, 54, 0.5)), url('imgs/bos.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 136, 83, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 136, 83, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 136, 83, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 136, 83, 0.8), rgba(42, 50, 54, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 136, 83, 0.9), rgba(42, 50, 54, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 136, 83, 0.9), rgba(42, 50, 54, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 136, 83, 0.9), rgba(42, 50, 54, 0.9)";
+        } if (img == "bkn") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(6, 25, 34, 0.8), rgba(255, 255, 255, 0.5)), url('imgs/bkn.jpg')";
+            document.body.style.backgroundColor = "rgba(6, 25, 34, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(6, 25, 34, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(6, 25, 34, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(6, 25, 34, 0.8), rgba(255, 255, 255,0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(6, 25, 34, 0.9), rgba(255, 255, 255,0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(6, 25, 34, 0.9), rgba(255, 255, 255,0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(6, 25, 34, 0.9), rgba(255, 255, 255,0.9)";
+        } if (img == "cha") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(29, 140, 171, 0.8), rgba(29, 12, 101, 0.5)), url('imgs/cha.jpg')";
+            document.body.style.backgroundColor = "rgba(29, 140, 171, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(29, 140, 171, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(29, 140, 171, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(29, 140, 171, 0.8), rgba(29, 12, 101, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(29, 140, 171, 0.9), rgba(29, 12, 101, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(29, 140, 171, 0.9), rgba(29, 12, 101, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(29, 140, 171, 0.9), rgba(29, 12, 101, 0.9)";
+        } if (img == "chi") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(188, 3, 43, 0.8), rgba(0, 0, 0, 0.5)), url('imgs/chi.jpg')";
+            document.body.style.backgroundColor = "rgba(188, 3, 43, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(188, 3, 43, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(188, 3, 43, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(188, 3, 43, 0.8), rgba(0, 0, 0, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(188, 3, 43, 0.9), rgba(0, 0, 0, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(188, 3, 43, 0.9), rgba(0, 0, 0, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(188, 3, 43, 0.9), rgba(0, 0, 0, 0.9)";
+        } if (img == "cav") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(134, 0, 56, 0.8), rgba(0, 0, 0, 0.5)), url('imgs/cav.jpg')";
+            document.body.style.backgroundColor = "rgba(134, 0, 56, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(134, 0, 56, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(134, 0, 56, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(134, 0, 56, 0.8), rgba(0, 0, 0, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(134, 0, 56, 0.9), rgba(0, 0, 0, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(134, 0, 56, 0.9), rgba(0, 0, 0, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(134, 0, 56, 0.9), rgba(0, 0, 0, 0.9)";
+        } if (img == "mav") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 83, 188, 0.8), rgba(187, 196, 202, 0.5)), url('imgs/mav.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 83, 188, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 83, 188, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 83, 188, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 83, 188, 0.8), rgba(187, 196, 202, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 83, 188, 0.9), rgba(187, 196, 202, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 83, 188, 0.9), rgba(187, 196, 202, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 83, 188, 0.9), rgba(187, 196, 202, 0.9)";
+        } if (img == "nug") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(13, 34, 64, 0.8), rgba(255, 198, 39, 0.5)), url('imgs/nug.jpg')";
+            document.body.style.backgroundColor = "rgba(13, 34, 64, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(13, 34, 64, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(13, 34, 64, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(13, 34, 64, 0.8), rgba(255, 198, 39, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(13, 34, 64, 0.9), rgba(255, 198, 39, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(13, 34, 64, 0.9), rgba(255, 198, 39, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(13, 34, 64, 0.9), rgba(255, 198, 39, 0.9)";
+        } if (img == "pit") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(200,16,46, 0.8), rgba(29,66,138, 0.5)), url('imgs/pit.jpg')";
+            document.body.style.backgroundColor = "rgba(200,16,46, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(200,16,46, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(200,16,46, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(200,16,46, 0.8), rgba(29,66,138, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(200,16,46, 0.9), rgba(29,66,138, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(200,16,46, 0.9), rgba(29,66,138, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(200,16,46, 0.9), rgba(29,66,138, 0.9)";
+        } if (img == "gsw") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(29, 66, 138, 0.8), rgba(255, 199, 44, 0.5)), url('imgs/gsw.jpg')";
+            document.body.style.backgroundColor = "rgba(29, 66, 138, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(29, 66, 138, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(29, 66, 138, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(29, 66, 138, 0.8), rgba(255, 199, 44, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(29, 66, 138, 0.9), rgba(255, 199, 44, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(29, 66, 138, 0.9), rgba(255, 199, 44, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(29, 66, 138, 0.9), rgba(255, 199, 44, 0.9)";
+        } if (img == "hou") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(206,17,65, 0.8), rgba(6,25,34, 0.5)), url('imgs/hou.jpg')";
+            document.body.style.backgroundColor = "rgba(206,17,65, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(206,17,65, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(206,17,65, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(206,17,65, 0.8), rgba(6,25,34, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(206,17,65, 0.9), rgba(6,25,34, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(206,17,65, 0.9), rgba(6,25,34, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(206,17,65, 0.9), rgba(6,25,34, 0.9)";
+        } if (img == "ind") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 45, 98, 0.8), rgba(253, 187, 48, 0.5)), url('imgs/ind.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 45, 98, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 45, 98, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 45, 98, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 45, 98, 0.8), rgba(253, 187, 48, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 45, 98, 0.9), rgba(253, 187, 48, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 45, 98, 0.9), rgba(253, 187, 48, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 45, 98, 0.9), rgba(253, 187, 48, 0.9)";
+        } if (img == "lac") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(200,16,46, 0.8), rgba(29,66,148, 0.5)), url('imgs/lac.jpg')";
+            document.body.style.backgroundColor = "rgba(200,16,46, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(200,16,46, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(200,16,46, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(200,16,46, 0.8), rgba(29,66,148, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(200,16,46, 0.9), rgba(29,66,148, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(200,16,46, 0.9), rgba(29,66,148, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(200,16,46, 0.9), rgba(29,66,148, 0.9)";
+        } if (img == "lal") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(85, 37, 130, 0.8), rgba(253, 185, 39, 0.5)), url('imgs/lal.jpg')";
+            document.body.style.backgroundColor = "rgba(85, 37, 130, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(85, 37, 130, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(85, 37, 130, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(85, 37, 130, 0.8), rgba(253, 185, 39, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(85, 37, 130, 0.9), rgba(253, 185, 39, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(85, 37, 130, 0.9), rgba(253, 185, 39, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(85, 37, 130, 0.9), rgba(253, 185, 39, 0.9)";
+        } if (img == "mep") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(93, 118, 169, 0.8), rgba(18, 23, 63, 0.5)), url('imgs/mep.jpg')";
+            document.body.style.backgroundColor = "rgba(93, 118, 169, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(93, 118, 169, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(93, 118, 169, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(93, 118, 169, 0.8), rgba(18, 23, 63, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(93, 118, 169, 0.9), rgba(18, 23, 63, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(93, 118, 169, 0.9), rgba(18, 23, 63, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(93, 118, 169, 0.9), rgba(18, 23, 63, 0.9)";
+        } if (img == "mia") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(152, 0, 46, 0.8), rgba(249, 160, 27, 0.5)), url('imgs/mia.jpg')";
+            document.body.style.backgroundColor = "rgba(152, 0, 46, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(152, 0, 46, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(152, 0, 46, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(152, 0, 46, 0.8), rgba(249, 160, 27, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(152, 0, 46, 0.9), rgba(249, 160, 27, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(152, 0, 46, 0.9), rgba(249, 160, 27, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(152, 0, 46, 0.9), rgba(249, 160, 27, 0.9)";
+        } if (img == "mil") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 71, 27, 0.8), rgba(240, 235, 210, 0.5)), url('imgs/mil.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 71, 27, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 71, 27, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 71, 27, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 71, 27, 0.8), rgba(240, 235, 210, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 71, 27, 0.9), rgba(240, 235, 210, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 71, 27, 0.9), rgba(240, 235, 210, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 71, 27, 0.9), rgba(240, 235, 210, 0.9)";
+        } if (img == "min") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(12, 35, 64, 0.8), rgba(35, 97, 146, 0.5)), url('imgs/min.jpg')";
+            document.body.style.backgroundColor = "rgba(12, 35, 64, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(12, 35, 64, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(12, 35, 64, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(12, 35, 64, 0.8), rgba(35, 97, 146, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(12, 35, 64, 0.9), rgba(35, 97, 146, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(12, 35, 64, 0.9), rgba(35, 97, 146, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(12, 35, 64, 0.9), rgba(35, 97, 146, 0.9)";
+        } if (img == "nop") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 22, 65, 0.8), rgba(225, 58, 62, 0.5)), url('imgs/nop.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 22, 65, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 22, 65, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 22, 65, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 22, 65, 0.8), rgba(225, 58, 62, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 22, 65, 0.9), rgba(225, 58, 62, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 22, 65, 0.9), rgba(225, 58, 62, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 22, 65, 0.9), rgba(225, 58, 62, 0.9)";
+        } if (img == "nyk") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 107, 182, 0.8), rgba(245, 132, 38, 0.5)), url('imgs/nyk.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 107, 182, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 107, 182, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 107, 182, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 107, 182, 0.8), rgba(245, 132, 38, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 107, 182, 0.9), rgba(245, 132, 38, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 107, 182, 0.9), rgba(245, 132, 38, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 107, 182, 0.9), rgba(245, 132, 38, 0.9)";
+        } if (img == "okc") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 125, 195, 0.8), rgba(239, 59, 36, 0.5)), url('imgs/okc.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 125, 195, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 125, 195, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 125, 195, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 125, 195, 0.8), rgba(239, 59, 36, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 125, 195, 0.9), rgba(239, 59, 36, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 125, 195, 0.9), rgba(239, 59, 36, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 125, 195, 0.9), rgba(239, 59, 36, 0.9)";
+        } if (img == "orl") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 125, 197, 0.8), rgba(196, 206, 211, 0.5)), url('imgs/orl.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 125, 197, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 125, 197, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 125, 197, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 125, 197, 0.8), rgba(196, 206, 211, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 125, 197, 0.9), rgba(196, 206, 211, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 125, 197, 0.9), rgba(196, 206, 211, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 125, 197, 0.9), rgba(196, 206, 211, 0.9)";
+        } if (img == "phi") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 107, 182, 0.8), rgba(237, 23, 76, 0.5)), url('imgs/phi.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 107, 182, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 107, 182, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 107, 182, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 107, 182, 0.8), rgba(237, 23, 76, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 107, 182, 0.9), rgba(237, 23, 76, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 107, 182, 0.9), rgba(237, 23, 76, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 107, 182, 0.9), rgba(237, 23, 76, 0.9)";
+        } if (img == "phx") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(29, 17, 96, 0.8), rgba(229, 95, 32, 0.5)), url('imgs/phx.jpg')";
+            document.body.style.backgroundColor = "rgba(29, 17, 96, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(29, 17, 96, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(29, 17, 96, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(29, 17, 96, 0.8), rgba(229, 95, 32, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(29, 17, 96, 0.9), rgba(229, 95, 32, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(29, 17, 96, 0.9), rgba(229, 95, 32, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(29, 17, 96, 0.9), rgba(229, 95, 32, 0.9)";
+        } if (img == "por") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(224, 58, 62, 0.8), rgba(6, 25, 34, 0.5)), url('imgs/por.jpg')";
+            document.body.style.backgroundColor = "rgba(224, 58, 62, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(224, 58, 62, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(224, 58, 62, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(224, 58, 62, 0.8), rgba(6, 25, 34, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(224, 58, 62, 0.9), rgba(6, 25, 34, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(224, 58, 62, 0.9), rgba(6, 25, 34, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(224, 58, 62, 0.9), rgba(6, 25, 34, 0.9)";
+        } if (img == "sac") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(91, 43, 130, 0.8), rgba(99, 113, 122, 0.5)), url('imgs/sac.jpg')";
+            document.body.style.backgroundColor = "rgba(91, 43, 130, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(91, 43, 130, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(91, 43, 130, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(91, 43, 130, 0.8), rgba(99, 113, 122, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(91, 43, 130, 0.9), rgba(99, 113, 122, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(91, 43, 130, 0.9), rgba(99, 113, 122, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(91, 43, 130, 0.9), rgba(99, 113, 122, 0.9)";
+        } if (img == "sas") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(196, 206, 211, 0.8), rgba(6, 25, 34, 0.5)), url('imgs/sas.jpg')";
+            document.body.style.backgroundColor = "rgba(196, 206, 211, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(196, 206, 211, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(196, 206, 211, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(196, 206, 211, 0.8), rgba(6, 25, 34, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(196, 206, 211, 0.9), rgba(6, 25, 34, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(196, 206, 211, 0.9), rgba(6, 25, 34, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(196, 206, 211, 0.9), rgba(6, 25, 34, 0.9)";
+        } if (img == "rap") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(206, 17, 65, 0.8), rgba(6, 25, 34, 0.5)), url('imgs/rap.jpg')";
+            document.body.style.backgroundColor = "rgba(206, 17, 65, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(206, 17, 65, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(206, 17, 65, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(206, 17, 65, 0.8), rgba(6, 25, 34, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(206, 17, 65, 0.9), rgba(6, 25, 34, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(206, 17, 65, 0.9), rgba(6, 25, 34, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(206, 17, 65, 0.9), rgba(6, 25, 34, 0.9)";
+        } if (img == "uth") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 43, 92, 0.8), rgba(0, 71, 27, 0.5)), url('imgs/uth.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 43, 92, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 43, 92, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 43, 92, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 43, 92, 0.8), rgba(0, 71, 27, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 43, 92, 0.9), rgba(0, 71, 27, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 43, 92, 0.9), rgba(0, 71, 27, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 43, 92, 0.9), rgba(0, 71, 27, 0.9)";
+        } if (img == "wiz") {
+            document.body.style.backgroundImage = "linear-gradient(115deg, rgba(0, 43, 92, 0.8), rgba(227, 24, 55, 0.5)), url('imgs/wiz.jpg')";
+            document.body.style.backgroundColor = "rgba(0, 43, 92, 0.8)";
+            document.getElementById('bodyborder').style.backgroundColor = "rgba(0, 43, 92, 0.8)";
+            document.getElementById('bodyborder').style.boxShadow = "2px 2px 4px rgba(0, 43, 92, 1)";
+            document.getElementById('btn').style.background = "linear-gradient(to left, rgba(0, 43, 92, 0.8), rgba(227, 24, 55, 0.5)";
+            document.getElementById('pop').style.background = "linear-gradient(to left, rgba(0, 43, 92, 0.9), rgba(227, 24, 55, 0.9)";
+            document.getElementById('res').style.background = "linear-gradient(to right, rgba(0, 43, 92, 0.9), rgba(227, 24, 55, 0.9)";
+            document.getElementById('rtn').style.background = "linear-gradient(to right, rgba(0, 43, 92, 0.9), rgba(227, 24, 55, 0.9)";
+        } 
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa sobre NBA</title>
+    <link href="estilo.css" rel="stylesheet">
+    <link rel="icon" href="imgs/icon.jpg">
+</head>
+<body id="body">
+    <div id= "head" class="header"> 
+        <h1 id="title" class="text-center"><b>Pesquisa sobre NBA</b></h1>
+        <h2 id="description" class="description-text">Responda algumas perguntas sobre sua </br> relação com a maior liga de Basquete do mundo!</h2>
+    </div>
+
+    <div id="bodyborder" class="body-border">
+        <form>
+            <div class="form-group">
+                </br>
+                <label>Seu nome<sup>*</sup></label>
+                <input type="text" id="nome" placeholder="Digite seu nome aqui" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Sua idade<sup>*</sup></label>
+                <input type="number" id="age" min="5" max="99" placeholder="Digite sua idade aqui" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <div id="pop" class="popup">
+                    <h2>Obrigado por responder!</h2>
+                    <div class="buttons">
+                        <button onclick="location.href='dados.html'" type="button" id="res" class="res">Dados</button>
+                        <button onclick="buttonClose()"  type="button" id="rtn" class="rtn">Voltar</button>
+                    </div>
+                </div>
+                <p>Qual seu time favorito?<sup>*</sup></p>
+                <select onchange= "changeBgImg(this.value)" id="drop" class="form-control" name="role" required>
+                    <option disabled selected value>Selecione uma opção</option>
+                    <option value="atl">Atlanta Hawks</option>
+                    <option value="bos">Boston Celtics</option>
+                    <option value="bkn">Brooklyn Nets</option>
+                    <option value="cha">Charlotte Hornets</option>
+                    <option value="chi">Chicago Bulls</option>
+                    <option value="cav">Cleveland Cavaliers</option>
+                    <option value="mav">Dallas Mavericks</option>
+                    <option value="nug">Denver Nuggets</option>
+                    <option value="pit">Detroit Pistons</option>
+                    <option value="gsw">Golden State Warriors</option>
+                    <option value="hou">Houston Rockets</option>
+                    <option value="ind">Indiana Pacers</option>
+                    <option value="lac">Los Angeles Clippers</option>
+                    <option value="lal">Los Angeles Lakers</option>
+                    <option value="mep">Memphis Grizzlies</option>
+                    <option value="mia">Miami Heat</option>
+                    <option value="mil">Milwaukee Bucks</option>
+                    <option value="min">Minnesota Timberwolves</option>
+                    <option value="nyk">New York Knicks</option>
+                    <option value="nop">New Orleans Pelicans</option>
+                    <option value="okc">Oklahoma City Thunder</option>
+                    <option value="orl">Orlando Magic</option>
+                    <option value="phi">Philadelphia 76ers</option>
+                    <option value="phx">Phoenix Suns</option>
+                    <option value="por">Portland Trail Blazers</option>
+                    <option value="sac">Sacramento Kings</option>
+                    <option value="sas">San Antonio Spurs</option>
+                    <option value="rap">Toronto Raptors</option>
+                    <option value="uth">Utha Jazz</option>
+                    <option value="wiz">Washington Wizards</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p>Com qual frequência você assiste a NBA?</p>
+                <label><input class="input-radio" name="choose" type="radio" value="none" checked>Nenhuma</label>
+                <label><input class="input-radio" name="choose" type="radio" value="few">Algumas vezes</label>
+                <label><input class="input-radio" name="choose" type="radio" value="sometimes">Sempre que posso</label>
+                <label><input class="input-radio" name="choose" type="radio" value="always">Sempre</label>
+            </div>
+
+            <div class="form-group">
+                <p>Marque quais jogadores da NBA você conheçe!</p>
+                <label><input class="input-check" type="checkbox" value="lebron">LeBron James</label>
+                <label><input class="input-check" type="checkbox" value="curry">Stephen Curry</label>
+                <label><input class="input-check" type="checkbox" value="embiid">Joel Embiid</label>
+                <label><input class="input-check" type="checkbox" value="durant">Kevin Durant</label>
+                <label><input class="input-check" type="checkbox" value="shai">Shai Gilgeous-Alexander</label>
+                <label><input class="input-check" type="checkbox" value="kobe">Kobe Bryant</label>
+                <label><input class="input-check" type="checkbox" value="trae">Trae Young</label>
+                <label><input class="input-check" type="checkbox" value="luka">Luka Doncic</label>
+                <label><input class="input-check" type="checkbox" value="shaq">Shaquille O'Neal</label>
+                <label><input class="input-check" type="checkbox" value="jordan">Michael Jordan</label>
+            </div>
+
+            <div class="form-group">
+                <p>Como você começou a assistir a NBA?</p>
+                <textarea id="comments" class="input-area" name="comment" placeholder="Comente aqui!"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button onclick="ver()" type="button" class="click" id="btn" >Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Contatos: <a href="https://www.linkedin.com/in/flávio-santos-196a5a1a1/" target="_blank"><img src="https://img.icons8.com/color-glass/452/linkedin.png" alt="LinkedIn" style="width: clamp(1rem, 2vw, 4rem); height: clamp(1rem, 2vw, 4rem); vertical-align: middle;"></a> 
+                <a href="https://github.com/FlavioSantos98" target="_blank"><img src="https://img.icons8.com/color-glass/344/github.png" alt="GitHub" style="width: clamp(1rem, 2vw, 4rem); height: clamp(1rem, 2vw, 4rem); vertical-align: middle;"></a></p>    
+    </div> 
+</body>
+</html> 
