@@ -166,8 +166,6 @@ input, select, textarea {
     font-family: 'Poppins', sans-serif; 
     font-weight: 400;
     font-size: 12px;
-}
-
-.footer p {
     color: rgba(255, 255, 255);
+    text-decoration: none;
 }
